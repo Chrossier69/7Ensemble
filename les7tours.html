@@ -101,13 +101,14 @@
         50%      { opacity: 1; }
     }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-    }
+   .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
 
     header {
         background: rgba(0, 0, 0, 0.3);
@@ -144,22 +145,22 @@
     }
 
     /* ⭐️ Les deux tableaux Orion / La Pléiade */
-    .tours-overview {
-        display: flex;
-        justify-content: center;   /* centre le duo dans le grand cadre */
-        gap: 2rem;                 /* espace entre les deux cartes */
-        margin: 3rem 0;
-        align-items: stretch;
-    }
+   .tours-overview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 3rem auto;
+    max-width: 1050px;
+}
 
-    .tour-table {
-        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
-        border-radius: 15px;
-        padding: 2rem;
-        flex: 1 1 420px;           /* largeur mini */
-        max-width: 520px;          /* largeur maxi */
-        overflow-x: visible;       /* plus de barre de défilement interne */
-    }
+
+   .tour-table {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
+    border-radius: 15px;
+    padding: 2rem;
+    overflow-x: visible;   /* ← enlève la barre 👈 */
+    width: 100%;           /* ← utilise toute la place */
+}
 
     .table-title {
         text-align: center;
@@ -175,8 +176,10 @@
     }
 
     .option-7 .table-title {
+        
         background: linear-gradient(45deg, #667eea, #764ba2);
         color: white;
+        
     }
 
     table {
@@ -397,7 +400,7 @@
                             </tr>
                             <tr class="total-row">
                                 <td colspan="4"><strong>Gain total</strong></td>
-                                <td class="highlight-number">7,789€</td>
+                                <td class="highlight-number">7'789€</td>
                             </tr>
                         </tbody>
                     </table>
@@ -468,7 +471,7 @@
                             </tr>
                             <tr class="total-row">
                                 <td colspan="4"><strong>Gain total</strong></td>
-                                <td class="highlight-number">1,575,747€</td>
+                                <td class="highlight-number">1'575'747€</td>
                             </tr>
                         </tbody>
                     </table>
@@ -505,7 +508,7 @@
                0 0 6px rgba(255,255,255,0.9),
                0 0 14px rgba(78,205,196,0.9),
                0 0 24px rgba(78,205,196,0.7);">
-    Alcyone
+   &nbsp; Alcyone 
   </span><br>
                     Comme toute association caritative ou fondation qui a besoin de nouveaux donateurs pour continuer ses recherches, <br>
                     7 Ensemble nécessite un flux constant de participants. Il n'y a pas de miracle 7 Ensemble que nous avançons, pas seuls. <br> 
