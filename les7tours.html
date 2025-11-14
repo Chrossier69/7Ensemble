@@ -4,243 +4,273 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 7 Tours - 7 Ensemble</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-/* Effet de clignotement doux */
-.blink {
-    animation: blinkAnim 1.4s infinite;
-}
+   <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-@keyframes blinkAnim {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.35; }
-}
+    /* Effet de clignotement doux */
+    .blink {
+        animation: blinkAnim 1.4s infinite;
+    }
 
-/* Mise en avant de Porte-Lumière et Constellation */
-.highlight-term {
-    color: #00c7bb;
-    font-weight: 600;
-}
-.highlight-lumiere {
-    color: #ffffff;
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #d7faff;
-}
+    @keyframes blinkAnim {
+        0%, 100% { opacity: 1; }
+        50%      { opacity: 0.35; }
+    }
 
-.highlight-constellation {
-    color: #00e7d4;
-    font-size: 1.6rem;
-    font-weight: 700;
-}
+    /* Variante “gros mot lumineux” si tu en as besoin plus tard */
+    .blink-strong {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: #ffffff;
+        text-shadow:
+            0 0 8px  rgba(255,255,255,0.8),
+            0 0 12px rgba(78,205,196,0.9);
+        animation: pulse 1.8s infinite ease-in-out;
+    }
 
+    @keyframes pulse {
+        0%   { opacity: 1; }
+        50%  { opacity: 0.4; }
+        100% { opacity: 1; }
+    }
 
-/* Centrer proprement le bloc explicatif */
-.section-centered {
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    /* Mise en avant de termes importants */
+    .highlight-term {
+        color: #00c7bb;
+        font-weight: 600;
+    }
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(180deg, #0f1419 0%, #1a237e 30%, #3949ab 60%, #5c6bc0 85%, #9c27b0 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            color: white;
-            overflow-x: hidden;
-        }
+    .highlight-lumiere {
+        color: #ffffff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #d7faff;
+    }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent);
-            background-size: 200px 200px;
-            animation: twinkle 4s infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
+    .highlight-constellation {
+        color: #00e7d4;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
+    /* Centrer proprement un bloc explicatif */
+    .section-centered {
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(
+            180deg,
+            #0f1419 0%,
+            #1a237e 30%,
+            #3949ab 60%,
+            #5c6bc0 85%,
+            #9c27b0 100%
+        );
+        background-attachment: fixed;
+        min-height: 100vh;
+        color: white;
+        overflow-x: hidden;
+    }
 
-        header {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+            radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+            radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent);
+        background-size: 200px 200px;
+        animation: twinkle 4s infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.3; }
+        50%      { opacity: 1; }
+    }
 
-        .main-title {
-            text-align: center;
-            font-size: 3rem;
-            margin: 3rem 0;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
 
-        .section {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 3rem 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
+    header {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
+    .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+    }
+
+    .main-title {
+        text-align: center;
+        font-size: 3rem;
+        margin: 3rem 0;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .section {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3rem;
+        border-radius: 20px;
+        margin: 3rem 0;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ⭐️ Les deux tableaux Orion / La Pléiade */
+    .tours-overview {
+        display: flex;
+        justify-content: center;   /* centre le duo dans le grand cadre */
+        gap: 2rem;                 /* espace entre les deux cartes */
+        margin: 3rem 0;
+        align-items: stretch;
+    }
+
+    .tour-table {
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
+        border-radius: 15px;
+        padding: 2rem;
+        flex: 1 1 420px;           /* largeur mini */
+        max-width: 520px;          /* largeur maxi */
+        overflow-x: visible;       /* plus de barre de défilement interne */
+    }
+
+    .table-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .option-3 .table-title {
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+        color: white;
+    }
+
+    .option-7 .table-title {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+        table-layout: fixed;       /* répartit mieux les colonnes */
+    }
+
+    th {
+        background: rgba(255,255,255,0.2);
+        padding: 1rem 0.5rem;
+        text-align: center;
+        font-weight: bold;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    td {
+        padding: 0.8rem 0.5rem;
+        text-align: center;
+        border: 1px solid rgba(255,255,255,0.1);
+        font-weight: bold;
+        word-wrap: break-word;
+    }
+
+    .tour-row:nth-child(even) {
+        background: rgba(255,255,255,0.05);
+    }
+
+    .amount {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .total-row {
+        background: linear-gradient(45deg,
+            rgba(255,107,107,0.3),
+            rgba(78,205,196,0.3)
+        );
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .explanation {
+        background: linear-gradient(45deg,
+            rgba(78,205,196,0.1),
+            rgba(255,107,107,0.1)
+        );
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        border-left: 5px solid #4ecdc4;
+    }
+
+    .important-note {
+        background: rgba(255,107,107,0.2);
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        border-left: 5px solid #ff6b6b;
+        font-weight: 500;
+    }
+
+    .highlight-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4ecdc4;
+    }
+
+    /* 📱 Version mobile */
+    @media (max-width: 768px) {
         .tours-overview {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 3rem 0;
+            flex-direction: column;    /* une table sous l’autre */
+            align-items: center;
         }
 
         .tour-table {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
-            border-radius: 15px;
-            padding: 2rem;
-            overflow-x: auto;
+            max-width: 100%;
         }
 
-        .table-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-radius: 10px;
-        }
-
-        .option-3 .table-title {
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            color: white;
-        }
-
-        .option-7 .table-title {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
+        .main-title {
+            font-size: 2rem;
         }
 
         table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
-        th {
-            background: rgba(255,255,255,0.2);
-            padding: 1rem 0.5rem;
-            text-align: center;
-            font-weight: bold;
-            border: 1px solid rgba(255,255,255,0.2);
+        th, td {
+            padding: 0.5rem 0.3rem;
         }
+    }
+</style>
 
-        td {
-            padding: 0.8rem 0.5rem;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-            font-weight: bold;
-        }
-
-        .tour-row:nth-child(even) {
-            background: rgba(255,255,255,0.05);
-        }
-
-        .amount {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .total-row {
-            background: linear-gradient(45deg, rgba(255,107,107,0.3), rgba(78,205,196,0.3));
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .explanation {
-            background: linear-gradient(45deg, rgba(78,205,196,0.1), rgba(255,107,107,0.1));
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #4ecdc4;
-        }
-
-        .important-note {
-            background: rgba(255,107,107,0.2);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #ff6b6b;
-            font-weight: 500;
-        }
-
-        .highlight-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4ecdc4;
-        }
-
-        @media (max-width: 768px) {
-            .tours-overview {
-                grid-template-columns: 1fr;
-            }
-            
-            .main-title {
-                font-size: 2rem;
-            }
-            
-            table {
-                font-size: 0.9rem;
-            }
-            
-            th, td {
-                padding: 0.5rem 0.3rem;
-            }
-            .blink-strong {
-    font-weight: 700;
-    font-size: 1.6rem;
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 12px rgba(78,205,196,0.9);
-    animation: pulse 1.8s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.4; }
-    100% { opacity: 1; }
-}
-
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -304,7 +334,7 @@
             <div class="tours-overview">
                 <!-- Option 3 Personnes -->
                 <div class="tour-table option-3">
-                    <div class="table-title">Oréon</div>
+                    <div class="table-title">Orion</div>
                     <table>
                         <thead>
                             <tr>
@@ -451,15 +481,15 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
                         <h3 style="color: #4ecdc4; margin-bottom: 1rem;">Offert</h3>
-                        <p>Montant Offert à votre <br> Porte-Lumière <br> à chaque tour</p>
+                        <p>Montant Offert à votre <br> <strong>Alcyone</strong> <br> à chaque tour</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
                         <h3 style="color: #45b7d1; margin-bottom: 1rem;">Reçu</h3>
-                        <p>Montant reçu de votre <br> Constellation </p> par tour
+                        <p>Montant reçu de votre <br> <strong>Constellation</strong> <br> par tour  </p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
                         <h3 style="color: #feca57; margin-bottom: 1rem;">Prochain</h3>
-                        <p>Montant à Ofrrir à votre <br> Porte-Lumière <br> pour le tour suivant</p>
+                        <p>Montant à Ofrrir à votre <br> <strong>Alcyone</strong> <br> pour le tour suivant</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
                         <h3 style="color: #ff6b6b; margin-bottom: 1rem;">Avoir</h3>
@@ -471,7 +501,16 @@
             <div class="important-note">
                 <h3 style="color: #ff6b6b; margin-bottom: 1rem;">Information importante</h3>
                 <p style="font-size: 1.1rem; line-height: 1.6;">
-                    Ce système fonctionne grâce à la participation continue de nouveaux Porte-Lumière  .<br>Comme toute association caritative ou fondation qui a besoin de nouveaux donateurs pour continuer ses recherches, 7 Ensemble nécessite un flux constant de participants. Il n'y a pas de miracle - c'est ensemble que nous avançons, pas seuls. Cette logique s'applique partout : les commerces ont besoin de nouveaux clients pour survivre, sinon ils ferment comme de nombreux restaurants aujourd'hui. C'est la réalité de tout système d'entraide collective.
+                    Ce système fonctionne grâce à la participation continue de nouveaux <span class="blink" style="font-size:1.6rem; color:#ffffff; text-shadow:
+               0 0 6px rgba(255,255,255,0.9),
+               0 0 14px rgba(78,205,196,0.9),
+               0 0 24px rgba(78,205,196,0.7);">
+    Alcyone
+  </span><br>
+                    Comme toute association caritative ou fondation qui a besoin de nouveaux donateurs pour continuer ses recherches, <br>
+                    7 Ensemble nécessite un flux constant de participants. Il n'y a pas de miracle 7 Ensemble que nous avançons, pas seuls. <br> 
+                    Cette logique s'applique partout : les commerces ont besoin de nouveaux clients pour survivre, sinon ils ferment comme
+                    de nombreux restaurants aujourd'hui. C'est la réalité de tout système d'entraide collective 7 Ensemble qu'on avance.
                 </p>
             </div>
         </div>
