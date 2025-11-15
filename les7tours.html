@@ -102,7 +102,7 @@
     }
 
    .container {
-    max-width: 1300px;
+    max-width: 1400px; /* un peu plus large pour laisser respirer les deux tableaux */
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -145,21 +145,31 @@
     }
 
     /* ⭐️ Les deux tableaux Orion / La Pléiade */
-   .tours-overview {
+  .tours-overview {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin: 3rem auto;
-    max-width: 1050px;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.tour-table {
+    min-width: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.tour-table table {
+    width: 100%;
+    table-layout: fixed;
 }
 
 
-   .tour-table {
+
+  .tour-table {
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
     border-radius: 15px;
     padding: 2rem;
-    overflow-x: visible;   /* ← enlève la barre 👈 */
-    width: 100%;           /* ← utilise toute la place */
+    overflow-x: hidden;   /* IMPORTANT : plus de barre horizontale */
 }
 
     .table-title {
@@ -182,12 +192,13 @@
         
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 1rem;
-        table-layout: fixed;       /* répartit mieux les colonnes */
-    }
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    table-layout: auto;  /* ça c’est ce qu’on veut */
+}
+
 
     th {
         background: rgba(255,255,255,0.2);
@@ -198,12 +209,18 @@
     }
 
     td {
-        padding: 0.8rem 0.5rem;
-        text-align: center;
-        border: 1px solid rgba(255,255,255,0.1);
-        font-weight: bold;
-        word-wrap: break-word;
-    }
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-weight: bold;
+    /* plus de word-wrap ici */
+}
+
+/* Les montants ne se coupent jamais sur 2 lignes */
+td.amount {
+    white-space: nowrap;
+}
+
 
     .tour-row:nth-child(even) {
         background: rgba(255,255,255,0.05);
@@ -337,7 +354,7 @@
             <div class="tours-overview">
                 <!-- Option 3 Personnes -->
                 <div class="tour-table option-3">
-                    <div class="table-title">Orion</div>
+                    <div class="table-title">Triangulum</div>
                     <table>
                         <thead>
                             <tr>
@@ -408,7 +425,7 @@
 
                 <!-- Option 7 Personnes -->
                 <div class="tour-table option-7">
-                    <div class="table-title">La Pléiade</div>
+                    <div class="table-title">Les Pléiades</div>
                     <table>
                         <thead>
                             <tr>
@@ -513,7 +530,12 @@
                     Comme toute association caritative ou fondation qui a besoin de nouveaux donateurs pour continuer ses recherches, <br>
                     7 Ensemble nécessite un flux constant de participants. Il n'y a pas de miracle 7 Ensemble que nous avançons, pas seuls. <br> 
                     Cette logique s'applique partout : les commerces ont besoin de nouveaux clients pour survivre, sinon ils ferment comme
-                    de nombreux restaurants aujourd'hui. C'est la réalité de tout système d'entraide collective 7 Ensemble qu'on avance.
+                    de nombreux restaurants aujourd'hui. C'est la réalité de tout système d'entraide collective <span class="blink" style="font-size:1.6rem; color:#ffffff; text-shadow:
+               0 0 6px rgba(255,255,255,0.9),
+               0 0 14px rgba(78,205,196,0.9),
+               0 0 24px rgba(78,205,196,0.7);">
+   &nbsp; 7 Ensemble 
+  </span>  &nbsp; qu'on avance.
                 </p>
             </div>
         </div>
