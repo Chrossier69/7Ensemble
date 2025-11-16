@@ -196,17 +196,23 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 1rem;
-    table-layout: auto;  /* ça c’est ce qu’on veut */
+    table-layout: auto;
 }
 
+/* Colonne Avoir (option 7) — s'adapte aux gros montants */
+.option-7 table th:nth-child(5),
+.option-7 table td:nth-child(5) {
+    min-width: max-content;
+    white-space: nowrap;
+}
 
-    th {
-        background: rgba(255,255,255,0.2);
-        padding: 1rem 0.5rem;
-        text-align: center;
-        font-weight: bold;
-        border: 1px solid rgba(255,255,255,0.2);
-    }
+th {
+    background: rgba(255,255,255,0.2);
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid rgba(255,255,255,0.2);
+}
 
     td {
     padding: 0.8rem 0.5rem;
