@@ -1297,47 +1297,41 @@
     </div>
 
     <!-- Modal d'inscription 3 personnes -->
-    <div id="threeModal" class="modal">
+    <div id="sevenModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('threeModal')">&times;</span>
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 2rem;">✨ Rejoindre 7 Ensemble - Option 3 Personnes ✨</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
-                Gain total : <strong style="color: #f093fb;">7'789€</strong> - Pour commencer en douceur !
-            </p>
+            <span class="close" onclick="closeModal('sevenModal')">&times;</span>
+            <h2 style="text-align: center; color: #4ecdc4; margin-bottom: 2rem;">🌟 Rejoindre 7 Ensemble 🌟 </h2>
+                        </p>
             
-            <form id="threeForm" onsubmit="submitForm(event, 'three')">
+            <form id="sevenForm" onsubmit="submitForm(event, 'seven')">
                 <div class="form-group">
-                    <label for="threeFullName">Nom complet :</label>
-                    <input type="text" id="threeFullName" required placeholder="Votre nom et prénom">
+                    <label for="sevenFullName">Nom complet :</label>
+                    <input type="text" id="sevenFullName" required placeholder="Votre nom et prénom">
                 </div>
                 <div class="form-group">
-                    <label for="threeEmail">Email :</label>
-                    <input type="email" id="threeEmail" required placeholder="votre@email.com">
+                    <label for="sevenEmail">Email :</label>
+                    <input type="email" id="sevenEmail" required placeholder="votre@email.com">
                 </div>
                 <div class="form-group">
-                    <label for="threeCountry">Pays :</label>
-                    <select id="threeCountry" required>
-                        <option value="">Choisir votre pays</option>
-                        <option value="FR">France</option>
-                        <option value="CH">Suisse</option>
-                        <option value="BE">Belgique</option>
-                        <option value="CA">Canada</option>
-                        <option value="MA">Maroc</option>
-                        <option value="TN">Tunisie</option>
-                        <option value="SN">Sénégal</option>
-                        <option value="CI">Côte d'Ivoire</option>
-                        <option value="IN">Inde</option>
-                        <option value="OTHER">Autre</option>
+                    <label for="sevenCountry">Pays :</label>
+                    <select id="sevenCountry" required>
+                        <option value="" style="background: #1a1a2e88; color:" ">Choisir votre pays</option>
+                        <option value="" style="background: #1a1a2e; color:"FR">France</option>
+                        <option value="" style="background: #1a1a2e; color:"CH">Suisse</option>
+                        <option value="" style="background: #1a1a2e; color:"BE">Belgique</option>
+                        <option value="" style="background: #1a1a2e; color:"CA">Canada</option>
+                        <option value="" style="background: #1a1a2e; color:"MA">Maroc</option>
+                        <option value="" style="background: #1a1a2e; color:"TN">Tunisie</option>
+                        <option value="" style="background: #1a1a2e; color:"SN">Sénégal</option>
+                        <option value="" style="background: #1a1a2e; color:"CI">Côte d'Ivoire</option>
+                        <option value="" style="background: #1a1a2e; color:"IN">Inde</option>
+                        <option value="" style="background: #1a1a2e; color:"OTHER">Autre</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="threeIdNumber">Numéro de carte d'identité :</label>
-                    <input type="text" id="threeIdNumber" required placeholder="Utilisé uniquement pour vérification">
-                    <small style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Sécurisé et confidentiel</small>
-                </div>
-                <div class="form-group">
-                    <label for="threePaymentMethod">Mode de paiement préféré :</label>
-                    <select id="threePaymentMethod" required style="background: rgba(255,255,255,0.1); color: white; padding: 15px; border-radius: 10px;">
+                    <label for="sevenPaymentMethod">Mode de paiement préféré :</label>
+                    <select id="sevenPaymentMethod" required style="background: rgba(255,255,255,0.1); color: white; padding: 15px; border-radius: 10px;">
                         <option value="" style="background: #1a1a2e; color: white;">Choisir votre méthode</option>
                         <option value="card" style="background: #1a1a2e; color: white;">💳 Carte bancaire</option>
                         <option value="paypal" style="background: #1a1a2e; color: white;">🔵 PayPal</option>
